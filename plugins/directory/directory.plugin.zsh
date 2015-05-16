@@ -1,0 +1,26 @@
+alias as='autojump -s'
+alias po='popd'
+alias pu='pushd'
+alias home='cd ~/'
+
+alias md='mkdir -p'
+alias mkdir='mkdir -p'
+alias RF='rm -rf '
+alias path='echo -e ${PATH//:/\\n}'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias lsa='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+alias la='ls -a'
+alias lf='ls *(.)' #just files
+alias ld='ls *(/)' #just directories
+alias df='df -kTh'
+alias du='du -kh'
+alias tj='tar -xvjpf '
+alias t='tar xvfz '
+alias tz='tar -xvzpf '
+alias tb='tar -xvfj '
