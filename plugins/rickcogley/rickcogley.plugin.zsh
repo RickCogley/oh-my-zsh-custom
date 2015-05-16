@@ -21,5 +21,5 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 # reload oh-my-zsh
 
 function reloadomz {
-    . ~/.oh-my-zsh/oh-my-zsh.sh
+    source $ZSH/oh-my-zsh.sh
 }
