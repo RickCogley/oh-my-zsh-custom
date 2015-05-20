@@ -1,4 +1,5 @@
 export GOPATH=/Users/rcogley/gocode
+export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 
 # function to deploy hugo, had --force and --progress on rsync, maybe Apple's is old?
 function hugorccdeploy {
