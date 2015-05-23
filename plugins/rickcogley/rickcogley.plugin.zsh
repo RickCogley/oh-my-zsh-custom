@@ -25,3 +25,8 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 function reloadomz {
     source $ZSH/oh-my-zsh.sh
 }
+
+open_by_browser(){ open -a $1 $2}
+alias firefox='open_by_browser firefox'
+alias chrome='open_by_browser "Google Chrome"'
+alias esolia='chrome http://www.esolia.com'
