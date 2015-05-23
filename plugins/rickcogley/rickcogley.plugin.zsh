@@ -9,6 +9,19 @@ function hugorccdeploy {
     rsync -avze "ssh -p 22" --delete /tmp/rick.cogley.info/ rcogley@cogley.info:/home/rcogley/webapps/rick_hugo01
 }
 
+function hugoserveresoliaen {
+    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="config_en.toml" --port=1377
+}
+
+function hugoserveresoliaja {
+    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="config_ja.toml" --port=1399
+}
+
+function hugowatchesolias {
+    chrome http://localhost:1399
+    chrome http://localhost:1377
+}
+
 function whatsomz {
     ls -la ~/.oh-my-zsh
 }
