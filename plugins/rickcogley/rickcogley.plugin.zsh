@@ -11,12 +11,12 @@ function hugorccdeploy {
 
 function hugoserveresoliaen {
     cd /Users/rcogley/Repositories/eSolia
-    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="config_en.toml" --port=1377
+    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="/Users/rcogley/Repositories/eSolia/config_en.toml" --port=1377
 }
 
 function hugoserveresoliaja {
     cd /Users/rcogley/Repositories/eSolia
-    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="config_ja.toml" --port=1399
+    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="/Users/rcogley/Repositories/eSolia/config_ja.toml" --port=1399
 }
 
 function hugowatchesolias {
