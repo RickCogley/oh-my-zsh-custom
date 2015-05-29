@@ -5,7 +5,7 @@ export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 function hugodeploy-rcc {
     rm -rf /tmp/rick.cogley.info
     chmod -R 775 /Users/rcogley/Repositories/RCC-Hugo2015/static/
-    hugo -s /Users/rcogley/Repositories/RCC-Hugo2015/ -d /tmp/rick.cogley.info
+    hugo --config="/Users/rcogley/Repositories/RCC-Hugo2015/config.toml" -s /Users/rcogley/Repositories/RCC-Hugo2015/ -d /tmp/rick.cogley.info
     rsync -avze "ssh -p 22" --delete /tmp/rick.cogley.info/ rcogley@cogley.info:/home/rcogley/webapps/rick_hugo01
 }
 
