@@ -23,14 +23,19 @@ function hugodeploy-esoliacojp {
     rsync -avze "ssh -p 22" --delete /tmp/esolia.co.jp/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_co_jp_01
 }
 
-function hugoserveresoliaen {
+function hugoserver-esoliacom {
     cd /Users/rcogley/Repositories/eSolia
     hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="/Users/rcogley/Repositories/eSolia/config_en.toml" --port=1377
 }
 
-function hugoserveresoliaja {
+function hugoserver-esoliacojp {
     cd /Users/rcogley/Repositories/eSolia
     hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="/Users/rcogley/Repositories/eSolia/config_ja.toml" --port=1399
+}
+
+function hugoserver-rcc {
+    cd /Users/rcogley/Repositories/RCC-Hugo2015
+    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/RCC-Hugo2015" --config="/Users/rcogley/Repositories/RCC-Hugo2015/config.toml" --port=1313
 }
 
 function hugowatchesolias {
