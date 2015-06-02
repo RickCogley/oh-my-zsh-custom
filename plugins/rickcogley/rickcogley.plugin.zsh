@@ -23,6 +23,8 @@ function hugodeploy-esoliacojp {
     rsync -avze "ssh -p 22" --delete /tmp/esolia.co.jp/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_co_jp_01
 }
 
+# function to run hugo server
+
 function hugoserver-esoliacom {
     cd /Users/rcogley/Repositories/eSolia
     hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/eSolia" --config="/Users/rcogley/Repositories/eSolia/config_en.toml" --port=1377
@@ -36,6 +38,23 @@ function hugoserver-esoliacojp {
 function hugoserver-rcc {
     cd /Users/rcogley/Repositories/RCC-Hugo2015
     hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/Repositories/RCC-Hugo2015" --config="/Users/rcogley/Repositories/RCC-Hugo2015/config.toml" --port=1313
+}
+
+# function to output hugo config
+
+function hugoconfig-esoliacom {
+	cd /Users/rcogley/Repositories/eSolia
+	hugo config --config="/Users/rcogley/Repositories/eSolia/config_en.toml" > /Users/rcogley/Repositories/eSolia/config_en.txt
+}
+
+function hugoconfig-esoliacojp {
+	cd /Users/rcogley/Repositories/eSolia
+	hugo config --config="/Users/rcogley/Repositories/eSolia/config_ja.toml" > /Users/rcogley/Repositories/eSolia/config_ja.txt
+}
+
+function hugoconfig-rcc {
+	cd /Users/rcogley/Repositories/RCC-Hugo2015
+	hugo config --config="/Users/rcogley/Repositories/RCC-Hugo2015/config.toml" > /Users/rcogley/Repositories/RCC-Hugo2015/config.txt
 }
 
 function hugowatchesolias {
