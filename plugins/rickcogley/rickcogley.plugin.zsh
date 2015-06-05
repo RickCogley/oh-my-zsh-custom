@@ -1,6 +1,7 @@
 export GOPATH=/Users/rcogley/gocode
 export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 
+
 # function to deploy hugo, had --force and --progress on rsync, maybe Apple's is old?
 function hugodeploy-rcc {
     rm -rf /tmp/rick.cogley.info
@@ -83,3 +84,7 @@ open_by_browser(){ open -a $1 $2}
 alias firefox='open_by_browser firefox'
 alias chrome='open_by_browser "Google Chrome"'
 alias esolia='chrome http://www.esolia.com'
+
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
