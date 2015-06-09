@@ -5,6 +5,7 @@ export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 # function to deploy hugo, had --force and --progress on rsync, maybe Apple's is old?
 function hugodeploy-rcc {
     rm -rf /tmp/rick.cogley.info
+    RCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/Repositories/RCC-Hugo2015/static/css/rickcogleyinfo.css)"
     chmod -R 775 /Users/rcogley/Repositories/RCC-Hugo2015/static/
     hugo --config="/Users/rcogley/Repositories/RCC-Hugo2015/config.toml" -s /Users/rcogley/Repositories/RCC-Hugo2015/ -d /tmp/rick.cogley.info
     rsync -avze "ssh -p 22" --delete /tmp/rick.cogley.info/ rcogley@cogley.info:/home/rcogley/webapps/rick_hugo01
@@ -12,6 +13,7 @@ function hugodeploy-rcc {
 
 function hugodeploy-esoliacom {
     rm -rf /tmp/esolia.com
+    STYLECSS_HASH="$(git log -1 --format='%h' /Users/rcogley/Repositories/eSolia/static/css/style.css)"
     chmod -R 775 /Users/rcogley/Repositories/eSolia/static/
     hugo --config="/Users/rcogley/Repositories/eSolia/config_en.toml" -s /Users/rcogley/Repositories/eSolia/ -d /tmp/esolia.com
     rsync -avze "ssh -p 22" --delete /tmp/esolia.com/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_com_01
@@ -19,6 +21,7 @@ function hugodeploy-esoliacom {
 
 function hugodeploy-esoliacojp {
     rm -rf /tmp/esolia.co.jp
+    STYLECSS_HASH="$(git log -1 --format='%h' /Users/rcogley/Repositories/eSolia/static/css/style.css)"
     chmod -R 775 /Users/rcogley/Repositories/eSolia/static/
     hugo --config="/Users/rcogley/Repositories/eSolia/config_ja.toml" -s /Users/rcogley/Repositories/eSolia/ -d /tmp/esolia.co.jp
     rsync -avze "ssh -p 22" --delete /tmp/esolia.co.jp/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_co_jp_01
