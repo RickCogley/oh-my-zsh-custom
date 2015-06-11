@@ -25,9 +25,11 @@ function hugodeploy-esoliacom {
     export MATCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/Repositories/eSolia/static/css/materialize.min.css)"
     export PRISMCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/Repositories/eSolia/static/css/prism.min.css)"
     export TYPOCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/Repositories/eSolia/static/css/typography.min.css)"
+    export LATESTSHA="$(git rev-parse master)"
     chmod -R 775 /Users/rcogley/Repositories/eSolia/static/
     hugo --config="/Users/rcogley/Repositories/eSolia/config_en.toml" -s /Users/rcogley/Repositories/eSolia/ -d /tmp/esolia.com
     rsync -avze "ssh -p 22" --delete /tmp/esolia.com/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_com_01
+    curl -X POST http://util-02.esolia.com/flowdock/v2/flowdock.php?action=chat&chat_name=Auto-Script&chat_content=%40team%20Copied+files+to+site+via+rsync+including+https%3A%2F%2Fgithub.com%2FeSolia%2FeSolia%2Fcommit%2F$LATESTSHA&chat_tags=esolia.com&flowdock_api=73d6f7%3Df83ad24ab6628fda5ca2b18fff349a5877a928O7o799
 }
 
 function hugodeploy-esoliacojp {
@@ -43,6 +45,7 @@ function hugodeploy-esoliacojp {
     chmod -R 775 /Users/rcogley/Repositories/eSolia/static/
     hugo --config="/Users/rcogley/Repositories/eSolia/config_ja.toml" -s /Users/rcogley/Repositories/eSolia/ -d /tmp/esolia.co.jp
     rsync -avze "ssh -p 22" --delete /tmp/esolia.co.jp/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_co_jp_01
+    curl -X POST http://util-02.esolia.com/flowdock/v2/flowdock.php?action=chat&chat_name=Auto-Script&chat_content=%40team%20Copied+files+to+site+via+rsync+including+https%3A%2F%2Fgithub.com%2FeSolia%2FeSolia%2Fcommit%2F$LATESTSHA&chat_tags=esolia.co.jp&flowdock_api=73d6f7%3Df83ad24ab6628fda5ca2b18fff349a5877a928O7o799
 }
 
 # function to run hugo server
