@@ -1,5 +1,6 @@
 export GOPATH=/Users/rcogley/gocode
 export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
+export HOMEBREW_GITHUB_API_TOKEN="28d34fd1c2f43a62de60c5feb4c156f5979551ed"
 
 
 # function to deploy hugo, had --force and --progress on rsync, maybe Apple's is old?
