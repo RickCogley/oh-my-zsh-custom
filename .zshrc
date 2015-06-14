@@ -49,7 +49,7 @@ plugins=(rickcogley ackgrep pipe directory git git-extras github colored-man col
 
 # User configuration
 
-export PATH="/Users/rcogley/gocode:/Users/rcogley/gocode/bin:/usr/local/sbin:/usr/local/git/bin:/usr/local/heroku/bin:/opt/local/bin:/opt/local/sbin:/Users/rcogley/.rvm/gems/ruby-1.9.3-p362/bin:/Users/rcogley/.rvm/gems/ruby-1.9.3-p362@global/bin:/Users/rcogley/.rvm/rubies/ruby-1.9.3-p362/bin:/Users/rcogley/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/go/bin:/Users/rcogley/.rvm/bin"
+export PATH="/Users/rcogley/gocode:/Users/rcogley/gocode/bin:/usr/local/sbin:/usr/local/bin:/usr/local/heroku/bin:/opt/local/bin:/opt/local/sbin:/Users/rcogley/.rvm/gems/ruby-1.9.3-p362/bin:/Users/rcogley/.rvm/gems/ruby-1.9.3-p362@global/bin:/Users/rcogley/.rvm/rubies/ruby-1.9.3-p362/bin:/Users/rcogley/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/go/bin:/Users/rcogley/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Load zmodloads
@@ -81,3 +81,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# BREW RECOMMENDED
+fpath=(/usr/local/share/zsh-completions $fpath)
