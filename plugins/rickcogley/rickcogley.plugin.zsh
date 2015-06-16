@@ -13,7 +13,7 @@ function hugodeploy-rcc {
     export LIGHTRCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/lightbox.min.css)"
     chmod -R 775 /Users/rcogley/dev/RCC-Hugo2015/static/
     hugo --config="/Users/rcogley/dev/RCC-Hugo2015/config.toml" -s /Users/rcogley/dev/RCC-Hugo2015/ -d /tmp/rick.cogley.info
-    rsync -avze "ssh -p 22" --delete /tmp/rick.cogley.info/ rcogley@cogley.info:/home/rcogley/webapps/rick_hugo01
+    /usr/local/bin/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 /tmp/rick.cogley.info/ rcogley@cogley.info:/home/rcogley/webapps/rick_hugo01
 }
 
 function hugodeploy-esoliacom {
@@ -29,7 +29,7 @@ function hugodeploy-esoliacom {
     export LATESTSHA="$(git rev-parse master)"
     chmod -R 775 /Users/rcogley/dev/eSolia/static/
     hugo --config="/Users/rcogley/dev/eSolia/config_en.toml" -s /Users/rcogley/dev/eSolia/ -d /tmp/esolia.com
-    rsync -avze "ssh -p 22" --delete /tmp/esolia.com/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_com_01
+    /usr/local/bin/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 /tmp/esolia.com/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_com_01
     curl -X POST "http://util-02.esolia.com/flowdock/v2/flowdock.php?action=chat&chat_name=Auto-Script&chat_content=%40team%20Copied+files+to+ESOLIA.COM+site+via+rsync+including+commit+https%3A%2F%2Fgithub.com%2FeSolia%2FeSolia%2Fcommit%2F$LATESTSHA&chat_tags=esolia.com&flowdock_api=73d6f7%3Df83ad24ab6628fda5ca2b18fff349a5877a928O7o799"
 }
 
@@ -46,7 +46,7 @@ function hugodeploy-esoliacojp {
     export LATESTSHA="$(git rev-parse master)"
     chmod -R 775 /Users/rcogley/dev/eSolia/static/
     hugo --config="/Users/rcogley/dev/eSolia/config_ja.toml" -s /Users/rcogley/dev/eSolia/ -d /tmp/esolia.co.jp
-    rsync -avze "ssh -p 22" --delete /tmp/esolia.co.jp/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_co_jp_01
+    /usr/local/bin/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 /tmp/esolia.co.jp/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_co_jp_01
     curl -X POST "http://util-02.esolia.com/flowdock/v2/flowdock.php?action=chat&chat_name=Auto-Script&chat_content=%40team%20Copied+files+to+ESOLIA.CO.JP+site+via+rsync+including+commit+https%3A%2F%2Fgithub.com%2FeSolia%2FeSolia%2Fcommit%2F$LATESTSHA&chat_tags=esolia.co.jp&flowdock_api=73d6f7%3Df83ad24ab6628fda5ca2b18fff349a5877a928O7o799"
 }
 
