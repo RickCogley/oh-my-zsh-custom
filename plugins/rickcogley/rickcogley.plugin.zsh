@@ -92,7 +92,7 @@ function hugoserver-stable-esoliacojp {
 
 function hugoserver-esoliapro {
     cd /Users/rcogley/dev/eSolia.pro
-    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/dev/eSolia.pro" --config="/Users/rcogley/dev/eSolia/config.toml" --port=1388
+    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/dev/eSolia.pro" --config="/Users/rcogley/dev/eSolia.pro/config.toml" --port=1388
 }
 
 function hugoserver-rcc {
