@@ -17,6 +17,23 @@ function hugodeploy-rcc {
     /usr/local/bin/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 /tmp/rick.cogley.info/ rcogley@cogley.info:/home/rcogley/webapps/rick_hugo01
 }
 
+function hugodeploy-esoliapro {
+    cd /Users/rcogley/dev/eSolia.pro
+    rm -rf /tmp/esolia.pro
+    export STYLECSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/eSolia.pro/static/css/style.css)"
+    export FEEDEKCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/eSolia.pro/static/css/FeedEk-2.0.min.css)"
+    export FONTELLOCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/eSolia.pro/static/css/fontello.min.css)"
+    export GHPMATCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/eSolia.pro/static/css/ghpages-materialize.min.css)"
+    export MATCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/eSolia.pro/static/css/materialize.min.css)"
+    export PRISMCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/eSolia.pro/static/css/prism.min.css)"
+    export TYPOCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/eSolia.pro/static/css/typography.min.css)"
+    export LATESTSHA="$(git rev-parse master)"
+    chmod -R 775 /Users/rcogley/dev/eSolia.pro/static/
+    hugo --config="/Users/rcogley/dev/eSolia.pro/config.toml" -s /Users/rcogley/dev/eSolia.pro/ -d /tmp/esolia.pro
+    /usr/local/bin/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 /tmp/esolia.pro/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_pro_01
+    curl -X POST "http://util-02.esolia.com/flowdock/v2/flowdock.php?action=chat&chat_name=Auto-Script&chat_content=%40team%20Copied+files+to+ESOLIA.PRO+site+via+rsync+including+commit+https%3A%2F%2Fgithub.com%2FeSolia%2FeSolia%2Fcommit%2F$LATESTSHA&chat_tags=esolia.pro&flowdock_api=73d6f7%3Df83ad24ab6628fda5ca2b18fff349a5877a928O7o799"
+}
+
 function hugodeploy-esoliacom {
     cd /Users/rcogley/dev/eSolia
     rm -rf /tmp/esolia.com
@@ -58,9 +75,24 @@ function hugoserver-esoliacom {
     hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/dev/eSolia" --config="/Users/rcogley/dev/eSolia/config_en.toml" --port=1377
 }
 
+function hugoserver-stable-esoliacom {
+    cd /Users/rcogley/dev/eSolia
+    /usr/local/Cellar/hugo/0.14/bin/hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/dev/eSolia" --config="/Users/rcogley/dev/eSolia/config_en.toml" --port=1377
+}
+
 function hugoserver-esoliacojp {
     cd /Users/rcogley/dev/eSolia
     hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/dev/eSolia" --config="/Users/rcogley/dev/eSolia/config_ja.toml" --port=1399
+}
+
+function hugoserver-stable-esoliacojp {
+    cd /Users/rcogley/dev/eSolia
+    /usr/local/Cellar/hugo/0.14/bin/hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/dev/eSolia" --config="/Users/rcogley/dev/eSolia/config_ja.toml" --port=1399
+}
+
+function hugoserver-esoliapro {
+    cd /Users/rcogley/dev/eSolia.pro
+    hugo server --buildDrafts --watch --verbose --editor="atom" --source="/Users/rcogley/dev/eSolia.pro" --config="/Users/rcogley/dev/eSolia/config.toml" --port=1388
 }
 
 function hugoserver-rcc {
