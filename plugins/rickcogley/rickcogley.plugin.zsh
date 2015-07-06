@@ -31,7 +31,7 @@ function hugodeploy-esoliapro {
     chmod -R 775 /Users/rcogley/dev/eSolia.pro/static/
     hugo --config="/Users/rcogley/dev/eSolia.pro/config.toml" -s /Users/rcogley/dev/eSolia.pro/ -d /tmp/esolia.pro
     /usr/local/bin/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 /tmp/esolia.pro/ rcogley@cogley.info:/home/rcogley/webapps/es_hugo_esolia_pro_01
-    curl -X POST "http://util-02.esolia.com/flowdock/v2/flowdock.php?action=chat&chat_name=Auto-Script&chat_content=%40team%20Copied+files+to+ESOLIA.PRO+site+via+rsync+including+commit+https%3A%2F%2Fgithub.com%2FeSolia%2FeSolia%2Fcommit%2F$LATESTSHA&chat_tags=esolia.pro&flowdock_api=73d6f7%3Df83ad24ab6628fda5ca2b18fff349a5877a928O7o799"
+    curl -X POST "http://util-02.esolia.com/flowdock/v2/flowdock.php?action=chat&chat_name=Auto-Script&chat_content=%40team%20Copied+files+to+ESOLIA.PRO+site+via+rsync+including+commit+https%3A%2F%2Fgithub.com%2FeSolia%2FeSolia.pro%2Fcommit%2F$LATESTSHA&chat_tags=esolia.pro&flowdock_api=73d6f7%3Df83ad24ab6628fda5ca2b18fff349a5877a928O7o799"
 }
 
 function hugodeploy-esoliacom {
