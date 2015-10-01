@@ -3,6 +3,27 @@ export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 export HOMEBREW_GITHUB_API_TOKEN="$(cat ~/.homebrew_github_api_token)"
 source /usr/local/share/zsh/site-functions/_aws
 
+# functions to manually backup PROdb or dbflex
+
+function tdbackup-esolia {
+    cd /Users/rcogley/Google\ Drive/\!Backups/PROdb/15331
+    /usr/bin/mono tdbackup.exe
+}
+
+function tdbackup-cookjp {
+      cd /Users/rcogley/Google\ Drive/\!Backups/PROdb/15361
+    /usr/bin/mono tdbackup.exe
+}
+
+function tdbackup-cookap {
+      cd /Users/rcogley/Google\ Drive/\!Backups/PROdb/25822
+    /usr/bin/mono tdbackup.exe
+}
+
+function tdbackup-jrc {
+      cd /Users/rcogley/Google\ Drive/\!Backups/PROdb/26644
+    /usr/bin/mono tdbackup.exe
+}
 
 # function to deploy hugo, had --force and --progress on rsync, maybe Apple's is old?
 function hugodeploy-rcc {
