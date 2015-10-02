@@ -7,22 +7,22 @@ source /usr/local/share/zsh/site-functions/_aws
 
 function tdbackup-esolia {
     cd /Users/rcogley/Google\ Drive/\!Backups/PROdb/15331
-    /usr/bin/mono tdbackup.exe
+    /usr/local/bin/mono tdbackup.exe
 }
 
 function tdbackup-cookjp {
       cd /Users/rcogley/Google\ Drive/\!Backups/PROdb/15361
-    /usr/bin/mono tdbackup.exe
+    /usr/local/bin/mono tdbackup.exe
 }
 
 function tdbackup-cookap {
       cd /Users/rcogley/Google\ Drive/\!Backups/PROdb/25822
-    /usr/bin/mono tdbackup.exe
+    /usr/local/bin/mono tdbackup.exe
 }
 
 function tdbackup-jrc {
       cd /Users/rcogley/Google\ Drive/\!Backups/PROdb/26644
-    /usr/bin/mono tdbackup.exe
+    /usr/local/bin/mono tdbackup.exe
 }
 
 # function to deploy hugo, had --force and --progress on rsync, maybe Apple's is old?
