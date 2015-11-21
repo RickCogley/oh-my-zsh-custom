@@ -84,3 +84,9 @@ source $ZSH/oh-my-zsh.sh
 
 # BREW RECOMMENDED
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+# TOO MANY OPEN FILES ERROR
+# sudo nano /etc/sysctl.conf
+#   kern.maxfiles=24576
+#   kern.maxfilesperproc=20480
+ulimit -n 4096
