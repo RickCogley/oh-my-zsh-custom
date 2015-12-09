@@ -89,4 +89,9 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # sudo nano /etc/sysctl.conf
 #   kern.maxfiles=24576
 #   kern.maxfilesperproc=20480
-ulimit -n 4096
+ulimit -n 16384
+
+# Help
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
