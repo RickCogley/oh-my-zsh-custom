@@ -29,10 +29,12 @@ function tdbackup-jrc {
 function hugodeploy-rcc {
     cd /Users/rcogley/dev/RCC-Hugo2015
     rm -rf /tmp/rick.cogley.info
-    export RCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/rickcogleyinfo.css)"
-    export TOPICSRCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/topics.min.css)"
-    export PRISMRCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/prism.min.css)"
+    # export RCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/bundle/bundle.css)"
+    # export TOPICSRCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/topics.min.css)"
+    # export PRISMRCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/prism.min.css)"
+    export PRISMRCCJS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/js/prism.min.js)"
     export LIGHTRCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/lightbox.min.css)"
+    export LIGHTRCCJS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/js/lightbox.min.js)"
     chmod -R 775 /Users/rcogley/dev/RCC-Hugo2015/static/
     hugo --config="/Users/rcogley/dev/RCC-Hugo2015/config.toml" -s /Users/rcogley/dev/RCC-Hugo2015/ -d /tmp/rick.cogley.info
     /usr/local/bin/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 /tmp/rick.cogley.info/ rcogley@cogley.info:/home/rcogley/webapps/rick_hugo01
