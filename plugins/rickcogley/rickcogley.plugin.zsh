@@ -166,6 +166,7 @@ open_by_browser(){ open -a $1 $2}
 alias firefox='open_by_browser firefox'
 alias chrome='open_by_browser "Google Chrome"'
 alias esolia='chrome http://www.esolia.com'
+alias lsregister="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister"
 
 unalias run-help
 autoload run-help
