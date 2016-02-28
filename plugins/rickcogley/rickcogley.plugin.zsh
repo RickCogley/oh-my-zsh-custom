@@ -28,6 +28,7 @@ function tdbackup-jrc {
 # function to deploy hugo, had --force and --progress on rsync, maybe Apple's is old?
 function hugodeploy-rcc {
     cd /Users/rcogley/dev/RCC-Hugo2015
+    :>| ~/dev/RCC-Hugo2015/data/postgitinfo.yaml && for f in ~/dev/RCC-Hugo2015/content/post/*.md; do echo "$(cat $f|grep slug|sed 's/slug: //'): $(git log --pretty="%h %s" -1 $f)" >> ~/dev/RCC-Hugo2015/data/postgitinfo.yaml; done
     rm -rf /tmp/rick.cogley.info
     # export RCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/bundle/bundle.css)"
     # export TOPICSRCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/topics.min.css)"
@@ -162,11 +163,15 @@ function reloadomz {
     source $ZSH/oh-my-zsh.sh
 }
 
+function pgp2clipboard {
+  gpg --armor --export 3346F03F | pbcopy
+}
+
 open_by_browser(){ open -a $1 $2}
 alias firefox='open_by_browser firefox'
 alias chrome='open_by_browser "Google Chrome"'
 alias esolia='chrome http://www.esolia.com'
-alias lsregister="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister"
+alias lsregister='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister'
 
 unalias run-help
 autoload run-help

@@ -95,3 +95,6 @@ ulimit -n 16384
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
+
+# Recommended on http://nuclearsquid.com/writings/git-tricks-tips-workflows/
+autoload -U compinit && compinit
