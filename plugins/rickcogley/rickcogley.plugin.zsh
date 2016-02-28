@@ -28,6 +28,7 @@ function tdbackup-jrc {
 # function to deploy hugo, had --force and --progress on rsync, maybe Apple's is old?
 function hugodeploy-rcc {
     cd /Users/rcogley/dev/RCC-Hugo2015
+    :>| ~/dev/RCC-Hugo2015/data/postgitinfo.yaml && for f in ~/dev/RCC-Hugo2015/content/post/*.md; do echo "$(cat $f|grep slug|sed 's/slug: //'): $(git log --pretty="%h %s" -1 $f)" >> ~/dev/RCC-Hugo2015/data/postgitinfo.yaml; done
     rm -rf /tmp/rick.cogley.info
     # export RCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/bundle/bundle.css)"
     # export TOPICSRCCCSS_HASH="$(git log -1 --format='%h' /Users/rcogley/dev/RCC-Hugo2015/static/css/topics.min.css)"
