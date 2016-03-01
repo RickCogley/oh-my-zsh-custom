@@ -1,6 +1,7 @@
 export GOPATH=/Users/rcogley/gocode
 export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 export HOMEBREW_GITHUB_API_TOKEN="$(cat ~/.homebrew_github_api_token)"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 source /usr/local/share/zsh/site-functions/_aws
 
 # functions to manually backup PROdb or dbflex
