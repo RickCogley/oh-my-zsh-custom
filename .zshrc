@@ -45,7 +45,7 @@ ZSH_THEME="pygmalion"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(rickcogley ackgrep pipe directory git git-extras colored-man colorize brew osx zsh-syntax-highlighting jira heroku chucknorris coffee node dircycle dirhistory docker lol rand-quote screen atom)
+plugins=(rickcogley taskwarrior ackgrep pipe directory git git-extras colored-man colorize brew osx zsh-syntax-highlighting jira heroku chucknorris coffee node dircycle dirhistory docker lol rand-quote screen atom)
 
 # User configuration
 
