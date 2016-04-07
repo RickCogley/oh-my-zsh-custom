@@ -164,8 +164,23 @@ function reloadomz {
     source $ZSH/oh-my-zsh.sh
 }
 
+# put pgp on clipboard
+
 function pgp2clipboard {
   gpg --armor --export 3346F03F | pbcopy
+}
+
+### TaskWarrior ###
+# Alias for quick add to inbox 
+
+alias in='task add +inbox'
+
+# Tickle task into inbox
+
+tickle () {
+    deadline=$1
+    shift
+    in +tickle wait:$deadline $@
 }
 
 open_by_browser(){ open -a $1 $2}
@@ -173,7 +188,6 @@ alias firefox='open_by_browser firefox'
 alias chrome='open_by_browser "Google Chrome"'
 alias esolia='chrome http://www.esolia.com'
 alias lsregister='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister'
-alias in='task add +inbox'
 
 unalias run-help
 autoload run-help
