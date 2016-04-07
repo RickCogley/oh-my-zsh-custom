@@ -173,6 +173,7 @@ alias firefox='open_by_browser firefox'
 alias chrome='open_by_browser "Google Chrome"'
 alias esolia='chrome http://www.esolia.com'
 alias lsregister='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister'
+alias in='task add +inbox'
 
 unalias run-help
 autoload run-help
