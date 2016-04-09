@@ -99,3 +99,5 @@ HELPDIR=/usr/local/share/zsh/help
 
 # Recommended on http://nuclearsquid.com/writings/git-tricks-tips-workflows/
 autoload -U compinit && compinit
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
