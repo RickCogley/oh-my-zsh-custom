@@ -204,6 +204,14 @@ read_and_review (){
 
 alias rnr=read_and_review
 
+# tw context 
+
+alias tc="task context"
+alias tt="task rc.context=none"
+alias twork="task rc.context=work"
+alias thome="task rc.context=home"
+alias tgoto="task rc.context=goto"
+
 open_by_browser(){ open -a $1 $2}
 alias firefox='open_by_browser firefox'
 alias chrome='open_by_browser "Google Chrome"'
