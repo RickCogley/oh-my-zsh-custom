@@ -185,7 +185,7 @@ tickle () {
 
 # tw research and dev alias
 
-alias rnd='task add +rnd +next +@computer +@online'
+alias rnd='task add +rnd +next +computer +online'
 
 # tw read and review some URL
 
